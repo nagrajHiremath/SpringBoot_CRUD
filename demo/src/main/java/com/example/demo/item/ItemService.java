@@ -9,6 +9,17 @@ import java.util.ArrayList;
 public class ItemService {
 
     ArrayList<Item> itemList = new ArrayList<>();
+    public void add(){
+        for(int i=0; i<10; i++){
+            Item item = new Item();
+            item.setItemId("test"+i);
+            item.setItemSource("BAY");
+            item.setOrgId("fdsf");
+            item.setUom("each");
+            itemList.add(item);
+        }
+    }
+
 
 //    public String addItem(){
 //        return "Item added";

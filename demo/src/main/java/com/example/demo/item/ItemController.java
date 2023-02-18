@@ -9,6 +9,7 @@ import java.util.ArrayList;
 @RequestMapping("/api/items")
 public class ItemController {
 
+        int c = 0;
         public ItemService ItemService;
         @Autowired
         ItemController(ItemService ItemService){
@@ -28,6 +29,9 @@ public class ItemController {
         }
         @GetMapping
         public ArrayList<Item> getItemList(){
+            if(c == 0)
+            ItemService.add();
+            ++c;
             return ItemService.itemList;
         }
         @DeleteMapping("/{itemId}")
